@@ -1,0 +1,41 @@
+body {
+  height: 100%;
+  width: 100%;
+  border: 1px dashed red;
+}
+
+#container {
+  display: table-cell;
+  width: 500px;
+  height: 500px;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px dashed red;
+}
+
+.unexploded {
+  background-image: url("img/simcity.jpg");
+}
+
+.exploded {
+  background-image: url("img/explosion.jpg");
+}
+
+.panel {
+  margin: 0 auto;
+  padding: 10px;
+  display: inline-block;
+  background-color: #000;
+}
+
+.timer {
+  color: crimson;
+}
+
+.wire {
+  display: inline-block;
+}
+
+.resetgame {
+  width: 100%;
+}

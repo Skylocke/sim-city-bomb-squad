@@ -4,8 +4,24 @@
     <meta charset="utf-8">
     <title>Sim City Bomb Squad</title>
     <link rel="stylesheet" href="style.css">
-    <script src="bomb.js"></script>
   </head>
   <body class="unexploded">
+    <div id="container">
+      <div class="panel">
+        <div id="bomb_time" class="timer"></div>
+        <div class="wire_panel">
+          <img id="blue" class="wire" src="img/uncut-blue-wire.png">
+          <img id="green" class="wire" src="img/uncut-green-wire.png">
+          <img id="red" class="wire" src="img/uncut-red-wire.png">
+          <img id="white" class="wire" src="img/uncut-white-wire.png">
+          <img id="yellow" class="wire" src="img/uncut-yellow-wire.png">
+        </div>
+        <input id="test" class="test" type="button" value="test" onclick="clearInterval(bombTimer);">
+        <input id="restart" class="restart" type="button" value="reset" onclick="resetgame();" disabled>
+      </div>
+    </div>
+    <audio id="explosion" src="sounds/BldgExplode.wav"></audio>
+    <audio id="cheer" src="sounds/CrowdYay.wav"></audio>
+    <script src="bomb.js"></script>
   </body>
 </html>
