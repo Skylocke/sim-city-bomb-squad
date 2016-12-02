@@ -28,6 +28,9 @@ function countdown() {
 function initialize_wires() {
   var wire_set = document.getElementsByClassName("wire");
   for (var i=0; i<wire_set.length; i++) {
+    wire_set[i].src = "img/uncut-" + wire_set[i].id + "-wire.png";
+  }
+  for (var i=0; i<wire_set.length; i++) {
     wire_set[i].addEventListener("click", cut_wire);
   }
   return wire_set;
@@ -60,7 +63,8 @@ function randomize_wires() {
 function cut_wire() {
   // change image from uncut to cut
   this.src = "img/cut-" + this.id + "-wire.png";
-  
+  this.removeEventListener("click", cut_wire);
+
   // check for explode attribute
   if (this.getAttribute("explode") == "1") {
     clearInterval(bombTimer);
@@ -79,6 +83,7 @@ function cut_wire() {
 
 /* STATE FUNCTIONS AND STUFF */
 function explode_state() {
+  safewires = -1; // to prevent accidental success
   clearInterval(bombTimer);
   clearTimeout(bombTimeout);
   document.getElementById("restart").disabled = false;
@@ -95,9 +100,6 @@ function safe_state() {
 
 function resetgame() {
   document.body.className = "unexploded";
-  for (var i=0; i<wire_set.length; i++) {
-    wire_set[i].src = "img/uncut-" + wire_set[i].id + "-wire.png";
-  }
   wire_set = initialize_wires();
   safewires = randomize_wires();
   start_time = set_time;

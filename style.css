@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Digital";
+  src: url("DS-DIGI.ttf") format("truetype");
+}
+
 body {
   height: 100%;
   width: 100%;
@@ -30,6 +35,7 @@ body {
 
 .timer {
   color: crimson;
+  font-family: "Digital", monospace;
 }
 
 .wire {
